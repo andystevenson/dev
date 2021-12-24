@@ -3,7 +3,7 @@
   command = "npm run build"
 
 [[redirects]]
-  from = "/hello"
-  to = "https://upbeat-tereshkova-b2514d.netlify.app"
-  status = 301
+  from = "/hello/*"
+  to = "https://upbeat-tereshkova-b2514d.netlify.app/:splat"
+  status = 200
   force = true
