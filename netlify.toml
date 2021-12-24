@@ -9,7 +9,5 @@
   force = true
 
 [[redirects]]
-  from = "https://upbeat-tereshkova-b2514d.netlify.app/*"
-  to = "/hello/:splat"
-  status = 200
-  force = true
+  from = "/google"
+  to = "https://www.google.com"
