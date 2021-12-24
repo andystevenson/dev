@@ -5,6 +5,5 @@
 [[redirects]]
   from = "/hello"
   to = "https://upbeat-tereshkova-b2514d.netlify.app"
-  status = 200
+  status = 301
   force = true
-  
