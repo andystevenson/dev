@@ -2,9 +2,8 @@
   publish = "_site"
   command = "npm run build"
 
-[[redirect]]
+[[redirects]]
   from = "/hello"
   to = "https://upbeat-tereshkova-b2514d.netlify.app/"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
