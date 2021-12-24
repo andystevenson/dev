@@ -9,5 +9,5 @@
   force = true
 
 [[redirects]]
-  from = "/google"
-  to = "https://www.google.com"
+  from = "/google/*"
+  to = "https://www.google.com/:splat"
