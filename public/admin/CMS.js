@@ -36,23 +36,19 @@ CMS.registerEventListener({
   name: 'preSave',
   handler: ({ author, entry }) => {
     console.log('preSave', { author, entry })
-    console.log(JSON.stringify({ author, data: entry.get('data') }, null, 2))
 
-    const res = entry.get('data').set('permalink', false)
-    entry.get('data').set('author', author)
-    entry.get('data').set('date', new Date().toUTCString())
-    console.log(
-      'after change>>>>2',
-      res,
-      JSON.stringify({ author, data: entry.get('data') }, null, 2),
-    )
+    const data = entry.get('data')
+    data.set('author', author)
+    data.set('permalink', false)
+    data.set('date', new Date().toUTCString())
   },
 })
 
 CMS.registerEventListener({
   name: 'postSave',
   handler: ({ author, entry }) => {
-    console.log('postSave', { author, entry })
-    console.log(JSON.stringify({ author, data: entry.get('data') }, null, 2))
+    console.log('postSave', { author })
+    const data = entry.get('data')
+    console.log(JSON.stringify({ author, data }, null, 2))
   },
 })
