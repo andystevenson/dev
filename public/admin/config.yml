@@ -1,0 +1,47 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
+# when using the default proxy server port
+local_backend: true
+
+media_folder: 'public/media'
+public_folder: '/media'
+show_preview_links: false
+collections:
+  - label: 'blog'
+    name: 'blog'
+    description: >
+      Latest update from Andy Stevenson, news on projects, hobbies etc
+    summary: "{{title | upper}} - {{date | date('YYYY-MM-DD')}} – {{body | truncate(20, '***')}}"
+    folder: 'src/cms/blog'
+    create: true
+    editor:
+      preview: true
+    fields:
+      - { label: 'title', name: 'title', widget: 'string' }
+      - { label: 'description', name: 'description', widget: 'string' }
+      - { label: 'body', name: 'body', widget: 'markdown' }
+      - widget: 'select'
+        label: 'tags'
+        name: 'tags'
+        multiple: true
+        create: true
+        options: ['featured', 'archive']
+  - label: 'Settings'
+    name: 'settings'
+    editor:
+      preview: false
+    files:
+      - label: 'links'
+        name: 'links'
+        file: 'src/cms/settings/links.json'
+        fields:
+          - label: 'link'
+            name: 'link'
+            widget: 'list'
+            collapsed: false
+            fields:
+              - { label: 'title', name: 'title', widget: 'string' }
+              - { label: 'url', name: 'url', widget: 'string' }
+              - { label: 'description', name: 'description', widget: 'string' }
