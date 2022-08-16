@@ -38,11 +38,12 @@ CMS.registerEventListener({
     console.log('preSave', { author, entry })
     console.log(JSON.stringify({ author, data: entry.get('data') }, null, 2))
 
-    entry.get('data').set('permalink', false)
+    const res = entry.get('data').set('permalink', false)
     entry.get('data').set('author', author)
     entry.get('data').set('date', new Date().toUTCString())
     console.log(
       'after change>>>>2',
+      res,
       JSON.stringify({ author, data: entry.get('data') }, null, 2),
     )
   },
