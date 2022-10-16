@@ -6,3 +6,8 @@
   from = "/email"
   to = "/.netlify/functions/email"
   status = 200
+
+[[redirects]]
+  from = "/hello-world"
+  to = "/.netlify/functions/hello-world"
+  status = 200
