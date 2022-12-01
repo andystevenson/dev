@@ -11,3 +11,6 @@
   from = "/hello-world"
   to = "/.netlify/functions/hello-world"
   status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-emails"
